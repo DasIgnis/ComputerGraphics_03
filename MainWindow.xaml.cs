@@ -20,9 +20,17 @@ namespace ComputerGraphics_03
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_1_Click(object sender, RoutedEventArgs e)
+        {
+            WindowTask1 windowTask1 = new WindowTask1();
+            windowTask1.Show();
+            this.Close();
         }
     }
 }
