@@ -1,0 +1,89 @@
+﻿<Window x:Class="ComputerGraphics_03.WindowTask1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ComputerGraphics_03"
+        mc:Ignorable="d"
+        Title="WindowTask1" Height="450" Width="800">
+    <Grid
+        Margin="0, 0, 10, 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="60*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="80*"></ColumnDefinition>
+            <ColumnDefinition
+                Width="20*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image
+            Grid.RowSpan="5"
+            Grid.Column="0"
+            Margin="10, 10, 10, 10"
+            Name="canvas"
+            MouseDown="Canvas_MouseDown"
+            MouseMove="Canvas_MouseMove"
+            Width="600"
+            Height="400">
+        </Image>
+
+        <Button
+            x:Name="buttonDrawLine"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Content="Линия"
+            Grid.Column="1"
+            Grid.Row="0"
+            Click="ButtonDrawLine_Click"></Button>
+
+        <Button
+            x:Name="buttonFillColor"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Content="Сплошная заливка"
+            Grid.Column="1"
+            Grid.Row="1"
+            Click="ButtonFillColor_Click"></Button>
+
+        <Button
+            x:Name="buttonSelectImage"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Content="Выбор изображения"
+            Grid.Column="1"
+            Grid.Row="2"></Button>
+
+        <Button
+            x:Name="buttonFillImage"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Content="Заливка изображением"
+            Grid.Column="1"
+            Grid.Row="3"
+            Click="ButtonFillImage_Click"></Button>
+
+        <Button
+            x:Name="buttonBack"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Content="К списку заданий"
+            Grid.Column="1"
+            Grid.Row="4"
+            Margin="0, 0, 10, 10"
+            Click="ButtonBack_Click"></Button>
+
+        <Image
+            x:Name="selectedImage"
+            Grid.Column="1"
+            Grid.Row="4"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            Height="200"></Image>
+    </Grid>
+</Window>
