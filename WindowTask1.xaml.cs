@@ -25,10 +25,16 @@ namespace ComputerGraphics_03
         private bool fillingImage = false;
 
         Point point = new Point();
+        WriteableBitmap wBitmap;
 
         public WindowTask1()
         {
             InitializeComponent();
+
+            wBitmap = BitmapFactory.New(Convert.ToInt32(canvas.Width), Convert.ToInt32(canvas.Height));
+            canvas.Source = wBitmap;
+
+            wBitmap.Clear(Colors.White);
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
@@ -56,24 +62,25 @@ namespace ComputerGraphics_03
         private void Canvas_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ButtonState == MouseButtonState.Pressed)
-                point = e.GetPosition(this);
+                point = e.GetPosition(canvas);
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed && drawingLine)
             {
-                Line line = new Line();
+                int x1 = Convert.ToInt32(point.X);
+                int y1 = Convert.ToInt32(point.Y);
 
-                line.Stroke = SystemColors.WindowFrameBrush;
-                line.X1 = point.X;
-                line.Y1 = point.Y;
-                line.X2 = e.GetPosition(this).X;
-                line.Y2 = e.GetPosition(this).Y;
+                int x2 = Convert.ToInt32(e.GetPosition(canvas).X);
+                int y2 = Convert.ToInt32(e.GetPosition(canvas).Y);
 
-                point = e.GetPosition(this);
+                Console.WriteLine("Mouse X: " + x2 + " Mouse Y: " + y2);
+                wBitmap.DrawLine(x1, y1, x2, y2, Color.FromRgb(0, 0, 0));
 
-                canvas.Children.Add(line);
+
+
+                point = e.GetPosition(canvas);
             }
         }
     }

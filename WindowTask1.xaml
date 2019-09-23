@@ -22,17 +22,16 @@
                 Width="20*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Canvas
+        <Image
             Grid.RowSpan="5"
             Grid.Column="0"
             Margin="10, 10, 10, 10"
             Name="canvas"
             MouseDown="Canvas_MouseDown"
-            MouseMove="Canvas_MouseMove" >
-            <Canvas.Background>
-                <SolidColorBrush Color="White" Opacity="0"/>
-            </Canvas.Background>
-        </Canvas>
+            MouseMove="Canvas_MouseMove"
+            Width="600"
+            Height="400">
+        </Image>
 
         <Button
             x:Name="buttonDrawLine"
