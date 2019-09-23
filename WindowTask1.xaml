@@ -22,17 +22,16 @@
                 Width="20*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Canvas
+        <Image
             Grid.RowSpan="5"
             Grid.Column="0"
             Margin="10, 10, 10, 10"
             Name="canvas"
-            MouseLeftButtonDown="Canvas_MouseDown"
-            MouseMove="Canvas_MouseMove">
-            <Canvas.Background>
-                <SolidColorBrush Color="White" Opacity="0"/>
-            </Canvas.Background>
-        </Canvas>
+            MouseDown="Canvas_MouseDown"
+            MouseMove="Canvas_MouseMove"
+            Width="600"
+            Height="400">
+        </Image>
 
         <Button
             x:Name="buttonDrawLine"
@@ -69,6 +68,16 @@
             Grid.Column="1"
             Grid.Row="3"
             Click="ButtonFillImage_Click"></Button>
+
+        <Button
+            x:Name="buttonClear"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            Content="X"
+            Grid.Column="1"
+            Grid.Row="4"
+            Margin="10, 0, 10, 10"
+            Click="ButtonClear_Click"></Button>
 
         <Button
             x:Name="buttonBack"
