@@ -27,8 +27,8 @@
             Grid.Column="0"
             Margin="10, 10, 10, 10"
             Name="canvas"
-            MouseDown="Canvas_MouseDown"
-            MouseMove="Canvas_MouseMove" >
+            MouseLeftButtonDown="Canvas_MouseDown"
+            MouseMove="Canvas_MouseMove">
             <Canvas.Background>
                 <SolidColorBrush Color="White" Opacity="0"/>
             </Canvas.Background>
@@ -58,7 +58,8 @@
             HorizontalAlignment="Right"
             Content="Выбор изображения"
             Grid.Column="1"
-            Grid.Row="2"></Button>
+            Grid.Row="2"
+            Click="ButtonSelectImage_Click"></Button>
 
         <Button
             x:Name="buttonFillImage"

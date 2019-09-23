@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace ComputerGraphics_03
         private bool drawingLine = false;
         private bool fillingColour = false;
         private bool fillingImage = false;
+
+        private BitmapImage fillerImage = new BitmapImage();
 
         Point point = new Point();
 
@@ -57,6 +60,10 @@ namespace ComputerGraphics_03
         {
             if (e.ButtonState == MouseButtonState.Pressed)
                 point = e.GetPosition(this);
+            if (fillingImage) {
+                for (int i = (int)point.X; i < 0; i++) {
+                } 
+            }
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
@@ -74,6 +81,20 @@ namespace ComputerGraphics_03
                 point = e.GetPosition(this);
 
                 canvas.Children.Add(line);
+            }
+        }
+
+        private void ButtonSelectImage_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Select a picture";
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+              "Portable Network Graphic (*.png)|*.png";
+            if (op.ShowDialog() == true)
+            {
+                fillerImage = new BitmapImage(new Uri(op.FileName));
+                selectedImage.Source = fillerImage;
             }
         }
     }
