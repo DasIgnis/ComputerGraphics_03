@@ -31,10 +31,10 @@ namespace ComputerGraphics_03
         {
             InitializeComponent();
 
-            wBitmap = BitmapFactory.New(Convert.ToInt32(canvas.Width), Convert.ToInt32(canvas.Height));
-            canvas.Source = wBitmap;
+            // wBitmap = BitmapFactory.New(Convert.ToInt32(canvas.Width), Convert.ToInt32(canvas.Height));
+            // canvas.Source = wBitmap;
 
-            wBitmap.Clear(Colors.White);
+           //  wBitmap.Clear(Colors.White);
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
@@ -76,7 +76,7 @@ namespace ComputerGraphics_03
                 int y2 = Convert.ToInt32(e.GetPosition(canvas).Y);
 
                 Console.WriteLine("Mouse X: " + x2 + " Mouse Y: " + y2);
-                wBitmap.DrawLine(x1, y1, x2, y2, Color.FromRgb(0, 0, 0));
+                // wBitmap.DrawLine(x1, y1, x2, y2, Color.FromRgb(0, 0, 0));
 
 
 
