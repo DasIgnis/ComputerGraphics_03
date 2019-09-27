@@ -32,5 +32,11 @@ namespace ComputerGraphics_03
             windowTask1.Show();
             this.Close();
         }
+
+        private void button_2_Click(object sender, RoutedEventArgs e)
+        {
+            Task02 new_window = new Task02();
+            new_window.Show();
+        }
     }
 }

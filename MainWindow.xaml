@@ -21,7 +21,8 @@
                 Content="Задание 2" 
                 Grid.Row="1"
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Center"/>
+                VerticalAlignment="Center"
+                Click="button_2_Click"/>
 
 
     </Grid>
