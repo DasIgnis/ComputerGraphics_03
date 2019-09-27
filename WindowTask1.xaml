@@ -57,7 +57,8 @@
             HorizontalAlignment="Right"
             Content="Выбор изображения"
             Grid.Column="1"
-            Grid.Row="2"></Button>
+            Grid.Row="2"
+            Click="ButtonSelectImage_Click"></Button>
 
         <Button
             x:Name="buttonFillImage"
@@ -67,6 +68,16 @@
             Grid.Column="1"
             Grid.Row="3"
             Click="ButtonFillImage_Click"></Button>
+
+        <Button
+            x:Name="buttonClear"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            Content="X"
+            Grid.Column="1"
+            Grid.Row="4"
+            Margin="10, 0, 10, 10"
+            Click="ButtonClear_Click"></Button>
 
         <Button
             x:Name="buttonBack"
